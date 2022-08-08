@@ -1,7 +1,7 @@
 // Dependencies
 
 const express = require("express");
-const fs = require("fs");
+// const fs = require("fs");
 
 // Express configuration
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // ROUTES
-require('./routes/apiRoutes')(app, fs);
+require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
 
