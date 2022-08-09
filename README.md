@@ -18,6 +18,7 @@
   * [Link](#link)
   * [License](#license)
   * [Questions](#questions)
+  * [Screenshots](#screenshots)
 
   ## Installation
   Clone this repository. To install necessary dependencies, run 'npm i' in your command line. Then run 'npm start' and open your browser to http://localhost:3001/
@@ -40,4 +41,11 @@
   Email: mike.levy.rva@gmail.com
 
   GitHub Profile: https://github.com/rva-mike
+  
+  ## Screenshots
+  
+  ![Screenshot (51)](https://user-images.githubusercontent.com/105617274/183707580-6b6dd2bd-26f2-4847-832c-118b4059e8a1.png)
+
+  ![Screenshot (52)](https://user-images.githubusercontent.com/105617274/183707593-07a112da-048e-41ec-ac90-8433d4337b89.png)
+
 
