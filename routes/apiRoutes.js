@@ -1,40 +1,47 @@
-// LOAD Data from db.json
-const notesData = require("../db/db.json");
-// const fs = require('fs');
+// Dependencies
+const fs = require("fs");
+
+let id = 1
 
 // routing
-module.exports = function (app, fs) {
+module.exports = function (app) {
 
     // API GET Request
     app.get("/api/notes", (request, response) => {
 
-        response.send(notesData);
+        // Read db.json file 
+        let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+        
+        console.log("GET request - Returning notes data: " + JSON.stringify(data));
+        
+        // Send read data to response of 'GET' request
+        response.json(data);
     });
+
 
     // API POST Request
     app.post("/api/notes", (request, response) => {
 
-        // take new note from request.  
+        // new note from request body.  
         const newNote = request.body;
+        
+        console.log("POST request - New Note: " + JSON.stringify(newNote));
 
-        let noteId = (notesData.length + 1).toString();
+        // Assigned id 
+        newNote.id = id ++;
 
-        newNote.id = noteId;
+        // Read data from db.json
+        let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+    
+        // Pushed new note
+        data.push(newNote);
 
-        // Pushed new note in db.json
-        notesData.push(newNote);
+        //  notes data to db.json
+        fs.writeFileSync('./db/db.json', JSON.stringify(data));
+        
+        console.log("Successfully added new note to db.json file.");
 
-        // notes data to db.json (write)
-        fs.writeFile('./db/db.json', JSON.stringify(notesData), (err) => {
-            
-            if(err) throw(err);
-            
-            console.log("Successfully added new note to 'db.json' file!");
-
-        });
-
-        console.log("Notes : "+JSON.stringify(notesData));
-
-        response.json(newNote);
+        // Send response
+        response.json(data);
     });
-};
+}
