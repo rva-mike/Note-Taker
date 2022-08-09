@@ -1,7 +1,9 @@
 // Dependencies
 const fs = require("fs");
 
-let id = 1
+// UUID npm package(ids)
+const { v4: uuidv4 } = require('uuid');
+
 
 // routing
 module.exports = function (app) {
@@ -28,7 +30,7 @@ module.exports = function (app) {
         console.log("POST request - New Note: " + JSON.stringify(newNote));
 
         // Assigned id 
-        newNote.id = id ++
+        newNote.id = uuidv4();
 
         // Read data from db.json
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
