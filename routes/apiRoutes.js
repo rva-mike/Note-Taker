@@ -61,7 +61,7 @@ module.exports = function (app) {
 
         fs.writeFileSync('./db/db.json', JSON.stringify(newData));
         
-        console.log('Successfully deleted note with id : ${noteId}');
+        console.log(`Successfully deleted note with id : ${noteId}`);
         response.json(newData);
     });
 
