@@ -15,6 +15,7 @@
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
+  * [Link](#link)
   * [License](#license)
   * [Questions](#questions)
 
@@ -23,6 +24,10 @@
 
   ## Usage
   Users can write, save, and delete notes.
+  
+  ## Link
+  Link to live application:
+  https://note-taker-app-xyz.herokuapp.com/
 
   ## License
   MIT
