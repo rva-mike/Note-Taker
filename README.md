@@ -29,7 +29,6 @@
 
   https://opensource.org/licenses/MIT
 
-
   ## Questions
   Please send me an email or visit my GitHub profile if you need to reach me for additional questions.
 
